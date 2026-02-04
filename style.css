@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.decoration {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.1;
+    z-index: -1;
+    animation: float 20s infinite linear;
+}
+
+.red-lantern {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.firework {
+    bottom: 15%;
+    right: 8%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    text-align: center;
+    padding: 30px 0;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 3.5rem;
+    color: #c62828;
+    text-shadow: 3px 3px 0 #ffd54f;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #5d4037;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.author-info {
+    font-size: 0.9rem;
+    color: #795548;
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.story-wrapper {
+    flex: 1;
+    position: relative;
+}
+
+.scene {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid #ffd54f;
+}
+
+.scene.active {
+    display: block;
+    opacity: 1;
+}
+
+.scene-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .scene-content {
+        flex-direction: row;
+    }
+}
+
+.image-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.story-image {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    border: 3px solid #ff8a65;
+}
+
+.story-image:hover {
+    transform: scale(1.02);
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(45deg, #ffccbc, #ffab91);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #5d4037;
+    font-weight: bold;
+}
+
+.text-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.scene-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.5rem;
+    color: #d84315;
+    margin-bottom: 20px;
+    border-bottom: 3px dashed #ffb74d;
+    padding-bottom: 10px;
+}
+
+.scene-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #4e342e;
+    margin-bottom: 20px;
+}
+
+.hint {
+    font-size: 0.9rem;
+    color: #ff8f00;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.interaction-btn {
+    background: linear-gradient(to right, #ff6b6b, #ff8e53);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.interaction-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.food-items {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.food-item {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    background: rgba(255, 241, 118, 0.3);
+    border-radius: 50%;
+}
+
+.food-item:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.ending-container {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    width: 100%;
+}
+
+#scene5 .scene-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.ending-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 3rem;
+    color: #c62828;
+    margin-bottom: 30px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ff9800; }
+    to { text-shadow: 0 0 20px #fff, 0 0 30px #ff5722; }
+}
+
+.ending-text {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #5d4037;
+    margin-bottom: 30px;
+}
+
+.ending-signature {
+    font-style: italic;
+    color: #795548;
+    margin: 30px 0;
+    font-size: 1.1rem;
+}
+
+.ending-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.action-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restart-btn {
+    background: #4caf50;
+    color: white;
+}
+
+#music-btn {
+    background: #2196f3;
+    color: white;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+    margin-top: 20px;
+}
+
+.nav-btn {
+    background: #5d4037;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #795548;
+    transform: translateY(-2px);
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.scene-indicator {
+    display: flex;
+    gap: 15px;
+}
+
+.indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #bdbdbd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #ff9800;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: #ffb74d;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .scene-title {
+        font-size: 2rem;
+    }
+    
+    .scene-content {
+        flex-direction: column;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .ending-title {
+        font-size: 2.2rem;
+    }
+}

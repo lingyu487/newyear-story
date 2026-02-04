@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>马到海南年 - 我的年味故事</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="decoration red-lantern">🏮</div>
+    <div class="decoration firework">🎆</div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🐎 马到海南年 🥥</h1>
+            <p class="subtitle">一段跨越山海的新春数字故事</p>
+            <div class="author-info">数媒专业 · 汪楫人 · 2026新春作品</div>
+        </header>
+
+        <main class="story-wrapper">
+            <section class="scene active" id="scene1">
+                <div class="scene-content">
+                    <div class="image-container">
+                        <img src="assets/images/scene1.jpg" alt="小马来到海南" class="story-image">
+                    </div>
+                    <div class="text-container">
+                        <h2 class="scene-title">第一幕：踏云而来</h2>
+                        <p class="scene-text">传说中，每逢马年，便会有一匹好运小马踏着祥云，日日奔腾，将祝福送往四海。今天，它到达的地点是——阳光海南。</p>
+                        <div class="hint">（点击图片区域有惊喜）</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scene" id="scene2">
+                <div class="scene-content">
+                    <div class="image-container">
+                        <img src="assets/images/scene2.jpg" alt="贴春联" class="story-image">
+                    </div>
+                    <div class="text-container">
+                        <h2 class="scene-title">第二幕：海岛春联</h2>
+                        <p class="scene-text">海南的春联别具一格，除了传统的吉祥话，还融入了椰风海韵。小马帮忙把春联贴在椰树上，海风轻拂，年味正浓。</p>
+                        <button class="interaction-btn" id="couplet-btn">点击揭开春联</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scene" id="scene3">
+                <div class="scene-content">
+                    <div class="image-container">
+                        <img src="assets/images/scene3.jpg" alt="准备年夜饭" class="story-image">
+                    </div>
+                    <div class="text-container">
+                        <h2 class="scene-title">第三幕：年饭飘香</h2>
+                        <p class="scene-text">文昌鸡、海鲜火锅、椰子饭... 海南特色的年夜饭让小马目不暇接。每一道菜都蕴含着家的味道和团圆的期盼。</p>
+                        <div class="food-items">
+                            <span class="food-item" data-food="文昌鸡">🐔</span>
+                            <span class="food-item" data-food="海鲜火锅">🦞</span>
+                            <span class="food-item" data-food="椰子饭">🥥</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scene" id="scene4">
+                <div class="scene-content">
+                    <div class="image-container">
+                        <img src="assets/images/scene4.jpg" alt="全家团圆" class="story-image">
+                    </div>
+                    <div class="text-container">
+                        <h2 class="scene-title">第四幕：团圆时刻</h2>
+                        <p class="scene-text">灯火可亲，家人闲坐。无论身在何处，这一刻的温暖都是最浓的年味。小马也收到了它的红包，里面装着最美好的祝福。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scene" id="scene5">
+                <div class="scene-content">
+                    <div class="ending-container">
+                        <h2 class="ending-title">✨ 新年快乐！ ✨</h2>
+                        <p class="ending-text">感谢你体验我的年味故事。<br>无论身在何处，家的温暖与年的喜庆，<br>永远是我们心中奔腾不息的力量。</p>
+                        <div class="ending-signature">
+                            <p>—— 一名在海南求学的学子</p>
+                            <p>2026年 马年新春</p>
+                        </div>
+                        <div class="ending-actions">
+                            <button class="action-btn" id="restart-btn">再看一遍</button>
+                            <button class="action-btn" id="music-btn">🎵 播放音乐</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="navigation">
+            <button class="nav-btn" id="prev-btn">← 上一幕</button>
+            <div class="scene-indicator">
+                <span class="indicator active" data-scene="1"></span>
+                <span class="indicator" data-scene="2"></span>
+                <span class="indicator" data-scene="3"></span>
+                <span class="indicator" data-scene="4"></span>
+                <span class="indicator" data-scene="5"></span>
+            </div>
+            <button class="nav-btn" id="next-btn">下一幕 →</button>
+        </footer>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music/bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
